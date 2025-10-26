@@ -17,7 +17,7 @@ const AppRouter = () => {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
-  );
+  );  
 };
 
 export default AppRouter;
