@@ -32,42 +32,37 @@ const values = [
   },
 ];
 
-const CoreValues = () => {
+export default function CoreValues() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-slate-100 overflow-hidden">
-      {/* === Decorative Background Accents === */}
-      <div className="absolute -top-10 left-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-orange-200/30 rounded-full blur-3xl -z-10" />
+    <section className="relative py-28 bg-gradient-to-b from-blue-50 via-white to-blue-50 overflow-hidden">
+      <div className="absolute top-0 left-0 w-[550px] h-[550px] bg-gradient-to-br from-blue-300/30 to-orange-200/30 blur-3xl rounded-full animate-pulse-slow" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tr from-orange-200/30 to-blue-300/30 blur-3xl rounded-full animate-pulse-slow delay-500" />
 
-      <div className="max-w-7xl mx-auto px-6">
-        {/* === Section Title === */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400">
+          <h2 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-orange-600 to-blue-900 drop-shadow-sm">
             Our Core Values
           </h2>
-          <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
-            The principles that drive our commitment to safety, reliability, and excellence.
+          <p className="text-slate-600 mt-6 max-w-2xl mx-auto text-lg md:text-xl">
+            The principles that drive our promise of safety, reliability, and excellence.
           </p>
         </motion.div>
 
-        {/* === Values Grid === */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{
             hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.15 },
-            },
+            visible: { transition: { staggerChildren: 0.15 } },
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
         >
           {values.map((v) => (
             <motion.div
@@ -76,38 +71,40 @@ const CoreValues = () => {
                 hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              className="group bg-white rounded-2xl shadow-lg overflow-hidden relative border border-slate-100 hover:border-blue-200 transition-all"
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ scale: 1.08, rotate: 1 }}
+              className="group relative bg-white rounded-3xl shadow-xl overflow-hidden border border-blue-100 hover:border-orange-300 transition-all hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]"
             >
-              {/* === Image Cover === */}
-              <div className="h-44 w-full overflow-hidden relative">
-                <img
+              <div className="relative h-48 w-full overflow-hidden">
+                <motion.img
                   src={v.icon}
                   alt={v.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"
+                />
               </div>
 
-              {/* === Content === */}
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-700 transition">
+              <div className="p-8 text-center relative z-10">
+                <h3 className="text-xl font-semibold text-blue-900 mb-3 group-hover:text-orange-600 transition-all duration-300">
                   {v.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-base leading-relaxed">
                   {v.desc}
                 </p>
               </div>
 
-              {/* === Glow Effect === */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition"></div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700"
+              />
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default CoreValues;
+}

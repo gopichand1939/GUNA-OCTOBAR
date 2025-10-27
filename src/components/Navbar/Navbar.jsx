@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiReact } from "react-icons/si";
@@ -11,8 +11,14 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
@@ -92,7 +98,6 @@ const Navbar = () => {
                   <NavLink
                     to={l.to}
                     end={l.end}
-                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `block px-3 py-2 rounded-md ${
                         isActive ? "text-blue-700 font-semibold" : "hover:text-blue-700"
@@ -106,7 +111,6 @@ const Navbar = () => {
               <motion.li whileHover={{ scale: 1.05 }}>
                 <a
                   href="/contact"
-                  onClick={() => setOpen(false)}
                   className="inline-block bg-gradient-to-r from-blue-700 to-blue-600 hover:to-blue-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition"
                 >
                   Book Now
@@ -118,6 +122,4 @@ const Navbar = () => {
       </AnimatePresence>
     </header>
   );
-};
-
-export default Navbar;
+}

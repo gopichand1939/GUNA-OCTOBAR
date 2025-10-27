@@ -38,14 +38,11 @@ const slides = [
   },
 ];
 
-const Hero = () => {
+export default function Hero() {
   const [index, setIndex] = useState(0);
-
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
-  const prevSlide = () =>
-    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
-  // Auto rotate every 7s
   useEffect(() => {
     const timer = setInterval(nextSlide, 7000);
     return () => clearInterval(timer);
@@ -53,7 +50,6 @@ const Hero = () => {
 
   return (
     <section className="relative h-[90vh] overflow-hidden text-white">
-      {/* Background Image */}
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[index].id}
@@ -62,37 +58,47 @@ const Hero = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${slides[index].image})`,
-          }}
+          style={{ backgroundImage: `url(${slides[index].image})` }}
         />
       </AnimatePresence>
 
-      {/* === TRIANGULAR GLASS OVERLAY (INFINITE STYLE) === */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Layer 1 – Deep base triangle */}
         <motion.div
-          animate={{ x: [0, 5, -5, 0] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
-          className="absolute left-0 top-0 w-[55%] h-full bg-gradient-to-tr from-[#001a3f]/90 via-[#003a80]/80 to-transparent clip-triangle-1"
+          animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.05, 1] }}
+          transition={{ repeat: Infinity, duration: 14, ease: "easeInOut" }}
+          className="absolute left-[-25%] top-[10%] w-[90%] h-[120%] bg-gradient-to-tr from-[#00112B]/90 via-[#002A5A]/85 to-transparent blur-[100px]"
+          style={{
+            clipPath: "ellipse(75% 60% at 25% 50%)",
+            zIndex: 1,
+          }}
         />
-
-        {/* Layer 2 – Lighter glassy triangle */}
         <motion.div
-          animate={{ x: [0, -10, 10, 0] }}
+          animate={{ x: [0, 15, -15, 0], opacity: [0.8, 1, 0.8] }}
           transition={{ repeat: Infinity, duration: 18, ease: "easeInOut" }}
-          className="absolute left-0 top-0 w-[50%] h-full bg-gradient-to-tr from-blue-500/60 via-sky-400/40 to-transparent blur-[40px] clip-triangle-2"
+          className="absolute left-[-10%] top-[5%] w-[85%] h-[110%] bg-gradient-to-tr from-[#0045A1]/70 via-[#007BFF]/60 to-transparent blur-[90px]"
+          style={{
+            clipPath: "ellipse(80% 65% at 28% 50%)",
+            mixBlendMode: "lighten",
+            zIndex: 2,
+          }}
         />
-
-        {/* Layer 3 – Thin diagonal highlight */}
         <motion.div
-          animate={{ opacity: [0.3, 0.5, 0.3] }}
-          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
-          className="absolute left-0 top-0 w-[45%] h-full bg-gradient-to-tr from-blue-200/40 via-blue-100/20 to-transparent clip-triangle-3 mix-blend-screen"
+          animate={{ opacity: [0.5, 0.8, 0.5], x: [0, -10, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
+          className="absolute left-[-5%] top-[15%] w-[80%] h-[100%] bg-gradient-to-tr from-[#00CFFF]/25 via-[#00AEEF]/15 to-transparent blur-[120px]"
+          style={{
+            clipPath: "ellipse(85% 70% at 30% 50%)",
+            mixBlendMode: "screen",
+            zIndex: 3,
+          }}
+        />
+        <motion.div
+          animate={{ x: ["-100%", "100%"] }}
+          transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
+          className="absolute top-0 left-0 w-[200%] h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent blur-[60px] opacity-60"
         />
       </div>
 
-      {/* === CONTENT === */}
       <div className="relative z-10 max-w-5xl mx-auto h-full flex flex-col justify-center px-6">
         <motion.h1
           key={slides[index].title}
@@ -123,7 +129,6 @@ const Hero = () => {
         </motion.button>
       </div>
 
-      {/* === NAVIGATION === */}
       <div className="absolute inset-y-0 left-0 flex items-center px-4">
         <button
           onClick={prevSlide}
@@ -141,7 +146,6 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* === DOTS === */}
       <div className="absolute bottom-8 w-full flex justify-center space-x-3 z-10">
         {slides.map((_, i) => (
           <button
@@ -155,6 +159,4 @@ const Hero = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
