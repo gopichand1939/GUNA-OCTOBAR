@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import { SiReact } from "react-icons/si";
+import Logo from "../../assets/Logo.png";
 
 const links = [
   { to: "/", label: "Home", end: true },
@@ -24,28 +24,20 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-20 flex items-center justify-between">
-          <NavLink to="/" className="flex items-center gap-3 group">
-            <motion.div
-              whileHover={{ rotate: 10, scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 text-white text-2xl font-bold shadow-md"
-            >
-              <SiReact className="text-cyan-300 animate-spin-slow" />
-            </motion.div>
-            <div className="leading-tight">
-              <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
-                Jaithra Enterprises
-              </h1>
-              <p className="text-xs text-gray-500 -mt-0.5">
-                Reliable Transport Solutions
-              </p>
+          <NavLink to="/" className="flex items-center gap-3">
+            <div className="flex items-center justify-center overflow-hidden">
+              <img
+                src={Logo}
+                alt="Jaithra Enterprises Logo"
+                className="w-60 h-52 object-contain"
+              />
             </div>
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-8">
             <ul className="flex items-center gap-6">
               {links.map((l) => (
-                <motion.li key={l.to} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                <li key={l.to}>
                   <NavLink
                     to={l.to}
                     end={l.end}
@@ -59,18 +51,15 @@ export default function Navbar() {
                   >
                     {l.label}
                   </NavLink>
-                </motion.li>
+                </li>
               ))}
             </ul>
-
-            <motion.a
+            <a
               href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="ml-4 bg-gradient-to-r from-blue-700 to-blue-600 hover:to-blue-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition"
             >
               Book Now
-            </motion.a>
+            </a>
           </nav>
 
           <button
@@ -94,7 +83,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col items-center py-5 space-y-4 text-gray-800 font-medium">
               {links.map((l) => (
-                <motion.li key={l.to} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <li key={l.to}>
                   <NavLink
                     to={l.to}
                     end={l.end}
@@ -106,16 +95,16 @@ export default function Navbar() {
                   >
                     {l.label}
                   </NavLink>
-                </motion.li>
+                </li>
               ))}
-              <motion.li whileHover={{ scale: 1.05 }}>
+              <li>
                 <a
                   href="/contact"
                   className="inline-block bg-gradient-to-r from-blue-700 to-blue-600 hover:to-blue-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition"
                 >
                   Book Now
                 </a>
-              </motion.li>
+              </li>
             </ul>
           </motion.div>
         )}
