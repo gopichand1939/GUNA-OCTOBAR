@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import busImage from '/src/assets/assets/employee.jpg'
-import TeamImage from '/src/assets/assets/Jaitra5.jpg'
-import JaitraImage from '/src/assets/assets/slider4.jpg'
-import roundImage from '/src/assets/assets/slide1.jpg'
+import { useNavigate } from "react-router-dom";
+
+import busImage from "/src/assets/assets/employee.jpg";
+import TeamImage from "/src/assets/assets/Jaitra5.jpg";
+import JaitraImage from "/src/assets/assets/slider4.jpg";
+import roundImage from "/src/assets/assets/slide1.jpg";
 
 const slides = [
   {
@@ -12,29 +14,34 @@ const slides = [
     title: "Reliable Travel Solutions for Schools, Corporates, & Family Events",
     subtitle: "Buses, Cabs, Drivers, and Custom Travel Plans",
     button: "Request a Service",
-    image: busImage
-      ,
+    link: "/services",
+    type: "navigate",
+    image: busImage,
   },
   {
     id: 2,
     title: "Luxury Fleet for Comfort and Style",
     subtitle: "Experience premium rides with our top-notch vehicles.",
     button: "Explore Fleet",
-    image: TeamImage
+    link: "/about",
+    type: "navigate",
+    image: TeamImage,
   },
   {
     id: 3,
     title: "Professional Drivers, Reliable Service",
     subtitle: "Your safety and punctuality are always our priorities.",
     button: "Book Now",
+    link: "/contact",
+    type: "navigate",
     image: JaitraImage,
   },
   {
     id: 4,
     title: "Corporate Travel Simplified",
-    subtitle:
-      "Tailored business transport solutions for teams, clients, and events.",
+    subtitle: "Tailored business transport solutions for teams, clients, and events.",
     button: "Get Started",
+    type: "stay",
     image: roundImage,
   },
 ];
@@ -42,6 +49,7 @@ const slides = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
+
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
@@ -51,7 +59,7 @@ export default function Hero() {
   }, []);
 
   const handleButtonClick = (slide) => {
-    if (slide.type === "navigate") navigate(slide.link);
+    if (slide.type === "navigate" && slide.link) navigate(slide.link);
   };
 
   return (
@@ -68,27 +76,31 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-        <div className="relative z-10 max-w-5xl mx-auto h-full flex flex-col justify-start px-6 pt-32 text-black">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+
+      <div className="relative z-10 max-w-5xl mx-auto h-full flex flex-col justify-start px-6 pt-32 text-black">
         <motion.h1
-        key={slides[index].title}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-black"
+          key={slides[index].title}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 
+            bg-gradient-to-r from-orange-400 via-yellow-300 to-amber-400 
+            bg-clip-text text-transparent drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]"
         >
-        {slides[index].title}
+          {slides[index].title}
         </motion.h1>
 
         <motion.p
-        key={slides[index].subtitle}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-lg md:text-xl font-bold text-black mb-8 max-w-2xl"
+          key={slides[index].subtitle}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl font-semibold text-gray-100 mb-8 max-w-2xl 
+            drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]"
         >
-        {slides[index].subtitle}
+          {slides[index].subtitle}
         </motion.p>
-
 
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -108,6 +120,7 @@ export default function Hero() {
           <FaChevronLeft size={20} />
         </button>
       </div>
+
       <div className="absolute inset-y-0 right-0 flex items-center px-4">
         <button
           onClick={nextSlide}
@@ -123,7 +136,7 @@ export default function Hero() {
             key={i}
             onClick={() => setIndex(i)}
             className={`w-3 h-3 rounded-full transition ${
-              i === index ? "bg-white" : "bg-gray-400/60"
+              i === index ? "bg-orange-400" : "bg-gray-400/60"
             }`}
           ></button>
         ))}

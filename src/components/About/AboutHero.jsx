@@ -8,7 +8,7 @@ export default function AboutHero() {
   return (
     <section
       aria-labelledby="about-hero-title"
-      className="relative overflow-hidden min-h-[80vh] flex items-start justify-center text-center text-black pt-32" // moved text up with pt-32
+      className="relative overflow-hidden min-h-[80vh] flex items-start justify-center text-center pt-32"
       style={{
         backgroundImage: `url('${bgUrl}')`,
         backgroundSize: "cover",
@@ -26,7 +26,9 @@ export default function AboutHero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
-          className="text-4xl md:text-6xl font-extrabold mb-4 text-black drop-shadow-md"
+          className="text-4xl md:text-6xl font-extrabold mb-4 
+            bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400 
+            bg-clip-text text-transparent drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
         >
           About Jaitra Enterprises
         </motion.h1>
@@ -35,7 +37,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-lg md:text-xl font-bold tracking-wide text-black"
+          className="text-lg md:text-xl font-semibold tracking-wide text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]"
         >
           Your trusted partner for reliable travel solutions
         </motion.p>
