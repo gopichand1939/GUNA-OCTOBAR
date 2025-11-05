@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 // update these paths if your assets live elsewhere
 import ReliabilityImg from "../../assets/ReliabilitySafety.png";
-import CustomizableImg from "../../assets/Customizable Packages.png";
-import ExperiencedImg from "../../assets/Experienced Drivers.png";
-import TransparentImg from "../../assets/Transparent Pricing.png";
+import CustomizableImg from "../../assets/CustomizablePackages.png";
+import ExperiencedImg from "../../assets/ExperiencedDrivers.png";
+import TransparentImg from "../../assets/TransparentPricing.png";
 
 const reasons = [
   {

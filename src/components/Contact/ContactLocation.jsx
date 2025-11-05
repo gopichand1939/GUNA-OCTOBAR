@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaExternalLinkAlt } from "react-icons/fa";
 
-// Business coordinates
+// Exact location (extracted from the provided short URL)
 const LAT = 17.7479782;
 const LNG = 83.1980264;
-const ZOOM = 17;
+const ZOOM = 17; // adjust for closer/further view (higher = closer)
 
-// Google Maps embed URL (works in iframe)
-const EMBED_SRC = `https://www.google.com/maps?q=${LAT},${LNG}&z=${ZOOM}&output=embed`;
-
-// Google Maps link for opening in new tab/app
-const GOOGLE_MAPS_PLACE_LINK = `https://www.google.com/maps/place/${LAT},${LNG}`;
+// Google Maps links
+const GOOGLE_MAPS_PLACE_LINK = `https://www.google.com/maps?q=${LAT},${LNG}`;
+const EMBED_SRC = `https://www.google.com/maps?q=Jaitra+Enterprises,+D.No+8-6/2,+Sriramnagar-2,+Gopalapatnam,+Visakhapatnam,+Andhra+Pradesh+531173&z=${ZOOM}&output=embed`;
 
 export default function ContactLocation() {
   const [loaded, setLoaded] = useState(false);
@@ -33,7 +31,6 @@ export default function ContactLocation() {
         whileHover={{ translateY: -4 }}
         className="max-w-6xl mx-auto bg-gradient-to-r from-white/70 to-blue-50/60 rounded-2xl shadow-lg p-6 sm:p-10 flex flex-col sm:flex-row items-stretch gap-6"
       >
-        {/* Info Panel */}
         <div className="w-full sm:w-1/3 flex flex-col items-center justify-center text-slate-700 p-6">
           <FaMapMarkerAlt className="text-pink-500 text-5xl mb-4" />
           <p className="text-lg font-medium">Jaitra Enterprises</p>
@@ -54,10 +51,9 @@ export default function ContactLocation() {
           </a>
         </div>
 
-        {/* Map Panel */}
         <div className="w-full sm:w-2/3 rounded-xl overflow-hidden bg-slate-100/40 relative">
+          {/* Responsive aspect ratio box */}
           <div className="w-full aspect-[16/10] sm:aspect-[16/9] relative">
-            {/* Loading placeholder */}
             {!loaded && !error && (
               <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
                 <div className="animate-pulse text-center p-4">
@@ -67,7 +63,6 @@ export default function ContactLocation() {
               </div>
             )}
 
-            {/* Error fallback */}
             {error && (
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-white">
                 <p className="text-sm text-slate-600 mb-3">
@@ -84,7 +79,7 @@ export default function ContactLocation() {
               </div>
             )}
 
-            {/* Google Maps iframe */}
+            {/* Iframe: lazy loading, centers on exact coordinates and drops a pin */}
             <iframe
               title="Jaitra Enterprises, Visakhapatnam - map"
               src={EMBED_SRC}
@@ -99,7 +94,6 @@ export default function ContactLocation() {
             />
           </div>
 
-          {/* Tip below the map */}
           <div className="p-4 border-t border-slate-100 text-left bg-white/60">
             <p className="text-xs text-slate-500">
               Tip: pinch to zoom on mobile, click & drag to pan. Use the button to open in the full Google Maps app for directions.

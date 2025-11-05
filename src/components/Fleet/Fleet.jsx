@@ -5,9 +5,9 @@ import FleetCard from "../../components/Fleet/FleetCard.jsx";
 import LuxuryCoach from "../../assets/LuxuryCoach.png";
 import MiniBus from "../../assets/MiniBus.png";
 import ExcutiveSadan from "../../assets/ExcutiveSadan.png";
-import SUVLargeVehicle from "../../assets/SUV LargeVehicle.png";
+import SUVLargeVehicle from "../../assets/SUVLargeVehicle.png";
 import TempoTraveller from "../../assets/Tempo Traveller.png";
-import SchoolBus from "../../assets/School Bus.png";
+import SchoolBus from "../../assets/SchoolBus.png";
 
 const fleet = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import familyImg from "../../assets/Customizable Packages.png";
+import familyImg from "../../assets/CustomizablePackages.png";
 
 export default function ServiceFamily() {
   return (
