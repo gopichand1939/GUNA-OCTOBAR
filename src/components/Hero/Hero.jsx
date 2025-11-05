@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -8,6 +9,8 @@ const slides = [
     title: "Reliable Travel Solutions for Schools, Corporates, & Family Events",
     subtitle: "Buses, Cabs, Drivers, and Custom Travel Plans",
     button: "Request a Service",
+    link: "/services",
+    type: "navigate",
     image:
       "https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
@@ -16,6 +19,8 @@ const slides = [
     title: "Luxury Fleet for Comfort and Style",
     subtitle: "Experience premium rides with our top-notch vehicles.",
     button: "Explore Fleet",
+    link: "/about",
+    type: "navigate",
     image:
       "https://images.pexels.com/photos/2526105/pexels-photo-2526105.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
@@ -24,6 +29,8 @@ const slides = [
     title: "Professional Drivers, Reliable Service",
     subtitle: "Your safety and punctuality are always our priorities.",
     button: "Book Now",
+    link: "/contact",
+    type: "navigate",
     image:
       "https://images.pexels.com/photos/3299386/pexels-photo-3299386.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
@@ -33,6 +40,8 @@ const slides = [
     subtitle:
       "Tailored business transport solutions for teams, clients, and events.",
     button: "Get Started",
+    link: "",
+    type: "stay",
     image:
       "https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1920",
   },
@@ -40,6 +49,7 @@ const slides = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
@@ -47,6 +57,10 @@ export default function Hero() {
     const timer = setInterval(nextSlide, 7000);
     return () => clearInterval(timer);
   }, []);
+
+  const handleButtonClick = (slide) => {
+    if (slide.type === "navigate") navigate(slide.link);
+  };
 
   return (
     <section className="relative h-[90vh] overflow-hidden text-white">
@@ -67,30 +81,19 @@ export default function Hero() {
           animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.05, 1] }}
           transition={{ repeat: Infinity, duration: 14, ease: "easeInOut" }}
           className="absolute left-[-25%] top-[10%] w-[90%] h-[120%] bg-gradient-to-tr from-[#00112B]/90 via-[#002A5A]/85 to-transparent blur-[100px]"
-          style={{
-            clipPath: "ellipse(75% 60% at 25% 50%)",
-            zIndex: 1,
-          }}
+          style={{ clipPath: "ellipse(75% 60% at 25% 50%)", zIndex: 1 }}
         />
         <motion.div
           animate={{ x: [0, 15, -15, 0], opacity: [0.8, 1, 0.8] }}
           transition={{ repeat: Infinity, duration: 18, ease: "easeInOut" }}
           className="absolute left-[-10%] top-[5%] w-[85%] h-[110%] bg-gradient-to-tr from-[#0045A1]/70 via-[#007BFF]/60 to-transparent blur-[90px]"
-          style={{
-            clipPath: "ellipse(80% 65% at 28% 50%)",
-            mixBlendMode: "lighten",
-            zIndex: 2,
-          }}
+          style={{ clipPath: "ellipse(80% 65% at 28% 50%)", mixBlendMode: "lighten", zIndex: 2 }}
         />
         <motion.div
           animate={{ opacity: [0.5, 0.8, 0.5], x: [0, -10, 10, 0] }}
           transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
           className="absolute left-[-5%] top-[15%] w-[80%] h-[100%] bg-gradient-to-tr from-[#00CFFF]/25 via-[#00AEEF]/15 to-transparent blur-[120px]"
-          style={{
-            clipPath: "ellipse(85% 70% at 30% 50%)",
-            mixBlendMode: "screen",
-            zIndex: 3,
-          }}
+          style={{ clipPath: "ellipse(85% 70% at 30% 50%)", mixBlendMode: "screen", zIndex: 3 }}
         />
         <motion.div
           animate={{ x: ["-100%", "100%"] }}
@@ -123,6 +126,7 @@ export default function Hero() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleButtonClick(slides[index])}
           className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full text-lg font-semibold shadow-lg w-fit"
         >
           {slides[index].button}

@@ -3,6 +3,12 @@ import { FaPhoneAlt, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/
 import { motion } from "framer-motion";
 
 const Footer = () => {
+  const socials = [
+    { icon: FaFacebookF, name: "Facebook", link: "https://facebook.com/yourpage" },
+    { icon: FaInstagram, name: "Instagram", link: "https://instagram.com/yourprofile" },
+    { icon: FaLinkedinIn, name: "LinkedIn", link: "https://linkedin.com/company/yourcompany" },
+  ];
+
   return (
     <footer className="relative bg-gradient-to-br from-[#0a0f1a] via-[#101828] to-[#1e293b] text-gray-300 py-12 px-6 overflow-hidden">
       <motion.div
@@ -29,10 +35,13 @@ const Footer = () => {
         </motion.div>
 
         <div className="flex justify-center gap-5 mt-6">
-          {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+          {socials.map(({ icon: Icon, link, name }, i) => (
             <motion.a
               key={i}
-              href="#"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={name}
               whileHover={{ scale: 1.2, y: -3 }}
               className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 text-orange-400 hover:bg-orange-500 hover:text-white shadow-lg shadow-orange-500/20 transition-all duration-300"
             >
