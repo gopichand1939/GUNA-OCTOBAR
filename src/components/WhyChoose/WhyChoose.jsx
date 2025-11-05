@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 // update these paths if your assets live elsewhere
-import ReliabilityImg from "../../assets/Reliability & Safety.png";
+import ReliabilityImg from "../../assets/ReliabilitySafety.png";
 import CustomizableImg from "../../assets/Customizable Packages.png";
 import ExperiencedImg from "../../assets/Experienced Drivers.png";
 import TransparentImg from "../../assets/Transparent Pricing.png";
