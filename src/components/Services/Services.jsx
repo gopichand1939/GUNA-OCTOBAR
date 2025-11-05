@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 import CorporateImg from "../../assets/assets/slider2.jpg";
@@ -39,14 +40,14 @@ const services = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative py-24 bg-gradient-to-b from-slate-50 via-white to-slate-100 overflow-hidden">
-      {/* Subtle background accents */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-orange-100/40 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* === TITLE === */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +63,6 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* === SERVICE GRID === */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -87,7 +87,6 @@ const Services = () => {
           ))}
         </motion.div>
 
-        {/* === CTA BUTTON === */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,6 +97,7 @@ const Services = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
+            onClick={() => navigate("/services")}
             className="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition relative overflow-hidden"
           >
             View All Services

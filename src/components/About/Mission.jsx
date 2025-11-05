@@ -58,12 +58,12 @@ export default function Mission() {
             viewport={{ once: true }}
             className="mt-10"
           >
-            <Link
+            {/* <Link
               to="/fleet"
               className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-md hover:shadow-2xl transition-all transform hover:-translate-y-1 hover:scale-105"
             >
               Explore Our Fleet
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
 
