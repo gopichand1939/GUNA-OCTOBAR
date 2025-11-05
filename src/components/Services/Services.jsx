@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
-import CorporateImg from "../../assets/ExcutiveSadan.png";
-import SchoolImg from "../../assets/School Bus.png";
-import FamilyImg from "../../assets/CustomerFocus.png";
-import CabImg from "../../assets/SUV LargeVehicle.png";
+import CorporateImg from "../../assets/assets/slider2.jpg";
+import SchoolImg from "../../assets/assets/slider3.jpg";
+import FamilyImg from "../../assets/assets/slide1.jpg";
+import CabImg from "../../assets/assets/slide5.jpg";
 
 const services = [
   {

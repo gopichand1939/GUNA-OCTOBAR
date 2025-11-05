@@ -28,7 +28,7 @@ export default function Navbar() {
             <div className="flex items-center justify-center overflow-hidden">
               <img
                 src={Logo}
-                alt="Jaithra Enterprises Logo"
+                alt="Jaitra Enterprises Logo"
                 className="w-60 h-52 object-contain"
               />
             </div>

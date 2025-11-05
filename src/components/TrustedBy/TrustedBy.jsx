@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const partners = [
-  { id: 1, name: "ABC School", icon: "/src/assets/School Bus.png" },
-  { id: 2, name: "XYZ Corporation", icon: "/src/assets/ProfessionalExcl.png" },
-  { id: 3, name: "Tech Industries", icon: "/src/assets/Founder.png" },
+  { id: 1, name: "St.Anns Convent School", icon: "/src/assets/School Bus.png" },
+  { id: 2, name: "Infinte Computers", icon: "/src/assets/ProfessionalExcl.png" },
+  { id: 3, name: "Infosys Technologies", icon: "/src/assets/Founder.png" },
   { id: 4, name: "Global Events", icon: "/src/assets/Customizable Packages.png" },
   { id: 5, name: "City Transport", icon: "/src/assets/MiniBus.png" },
   { id: 6, name: "Premium Services", icon: "/src/assets/LuxuryCoach.png" },

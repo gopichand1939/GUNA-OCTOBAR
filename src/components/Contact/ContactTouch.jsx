@@ -9,12 +9,12 @@ export default function ContactTouch() {
         <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 rounded-2xl shadow-md p-8">
           <FaPhoneAlt className="text-blue-700 text-3xl mb-3 mx-auto" />
           <h3 className="text-xl font-bold text-blue-800 mb-2">Phone</h3>
-          <p className="text-slate-600">+91 XXXXX XXXXX</p>
+          <p className="text-slate-600">+91 9876543211</p>
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 rounded-2xl shadow-md p-8">
           <FaEnvelope className="text-blue-700 text-3xl mb-3 mx-auto" />
           <h3 className="text-xl font-bold text-blue-800 mb-2">Email</h3>
-          <p className="text-slate-600">info@jaithra.com</p>
+          <p className="text-slate-600">info@Jaitra.com</p>
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 rounded-2xl shadow-md p-8">
           <FaMapMarkerAlt className="text-blue-700 text-3xl mb-3 mx-auto" />

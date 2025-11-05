@@ -19,7 +19,7 @@ const Footer = () => {
         className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-6"
       >
         <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
-          Jaithra Enterprises
+          Jaitra Enterprises
         </h2>
 
         <p className="text-gray-400 text-sm md:text-base max-w-lg leading-relaxed">
@@ -57,7 +57,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-xs text-gray-500 mt-8"
         >
-          © {new Date().getFullYear()} Jaithra Enterprises. All Rights Reserved.
+          © {new Date().getFullYear()} Jaitra Enterprises. All Rights Reserved.
         </motion.p>
       </motion.div>
 
