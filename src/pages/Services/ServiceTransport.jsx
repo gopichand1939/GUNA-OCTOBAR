@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import cabImg from "../../assets/SUV LargeVehicle.png";
+import cabImg from "../../assets/SUVLargeVehicle.png";
 
 export default function ServiceTransport() {
   return (

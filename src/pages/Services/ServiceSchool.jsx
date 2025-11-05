@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import schoolImg from "../../assets/School Bus.png";
+import schoolImg from "../../assets/SchoolBus.png";
 
 export default function ServiceSchool() {
   return (
