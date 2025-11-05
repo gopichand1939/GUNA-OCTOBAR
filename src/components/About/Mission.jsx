@@ -30,7 +30,7 @@ export default function Mission() {
             viewport={{ once: true }}
             className="text-slate-700 leading-relaxed text-lg md:text-xl"
           >
-            At <span className="text-blue-800 font-semibold">Jaithra Enterprises</span>, we’re driven by a passion for
+            At <span className="text-blue-800 font-semibold">Jaitra Enterprises</span>, we’re driven by a passion for
             redefining travel. Every journey we operate is built on the pillars of{" "}
             <span className="text-orange-600 font-medium">safety</span>,{" "}
             <span className="text-orange-600 font-medium">comfort</span>, and{" "}

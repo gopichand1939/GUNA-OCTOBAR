@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Founder from "../../assets/Founder.png";
+import Founder from "../../assets/assets/srinivas.jpg";
 
 export default function FounderSection() {
   return (
@@ -57,7 +57,7 @@ export default function FounderSection() {
           >
             “At{" "}
             <span className="font-semibold text-blue-800">
-              Jaithra Enterprises
+              Jaitra Enterprises
             </span>
             , we don’t just transport people — we deliver{" "}
             <span className="text-orange-600 font-medium">peace of mind</span>.
@@ -79,7 +79,8 @@ export default function FounderSection() {
             viewport={{ once: true }}
             className="text-blue-700 font-semibold mt-8 text-lg tracking-wide"
           >
-            — Founder, Jaithra Enterprises
+            — Srinivas,  
+              Jaitra Enterprises
           </motion.p>
         </motion.div>
       </motion.div>

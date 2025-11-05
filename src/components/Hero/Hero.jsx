@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import busImage from '/src/assets/assets/employee.jpg'
-import TeamImage from '/src/assets/assets/slider4.jpg'
-import JaitraImage from '/src/assets/assets/Jaitra5.jpg'
+import TeamImage from '/src/assets/assets/Jaitra5.jpg'
+import JaitraImage from '/src/assets/assets/slider4.jpg'
 import roundImage from '/src/assets/assets/slide1.jpg'
 
 const slides = [

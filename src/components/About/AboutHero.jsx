@@ -28,7 +28,7 @@ export default function AboutHero() {
           transition={{ duration: 1.2 }}
           className="text-4xl md:text-6xl font-extrabold mb-4 text-black drop-shadow-md"
         >
-          About Jaithra Enterprises
+          About Jaitra Enterprises
         </motion.h1>
 
         <motion.p

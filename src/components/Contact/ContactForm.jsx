@@ -117,8 +117,8 @@ const handleSubmit = (e) => {
               <FaPhoneAlt className="text-blue-700 text-2xl" />
               <h3 className="text-xl font-bold text-blue-800">Get In Touch</h3>
             </div>
-            <p className="text-slate-600 mb-2">Phone: +91 XXXXX XXXXX</p>
-            <p className="text-slate-600 mb-2">Email: info@jaithra.com</p>
+            <p className="text-slate-600 mb-2">Phone: +91 9876543211</p>
+            <p className="text-slate-600 mb-2">Email: info@Jaitra.com</p>
             <p className="text-slate-600">Address: Visakhapatnam, Andhra Pradesh</p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">

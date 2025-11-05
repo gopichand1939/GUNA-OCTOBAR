@@ -94,7 +94,7 @@ const WhyChoose = () => {
         >
           Why Choose{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-600">
-            Jaithra Enterprises?
+            Jaitra Enterprises?
           </span>
         </motion.h2>
 
