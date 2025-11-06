@@ -12,7 +12,7 @@ import TempoTraveller from "../../assets/TempoTraveller.png";
 import Mahathi from "../../assets/assets/mahathi.jpg"
 
 const partners = [
-  { id: 1, name: "St.anns convent School", icon: SchoolBus },
+  { id: 1, name: "St. Mary's School", icon: SchoolBus },
   { id: 2, name: "Infinte Computer Solutions", icon: ProfessionalExcl },
   { id: 3, name: "Infosys", icon: Founder },
   { id: 4, name: "Family Events", icon: CustomPackages },
