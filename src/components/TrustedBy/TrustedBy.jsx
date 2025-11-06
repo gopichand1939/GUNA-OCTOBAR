@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // ✅ Updated imports (no spaces)
 import SchoolBus from "../../assets/assets/st.anns.jpg";
-import ProfessionalExcl from "../../assets/assets/infinite.jpg";
+import ProfessionalExcl from "../../assets/assets/Infinite.jpg";
 import Founder from "../../assets/assets/infosys.jpg";
 import CustomPackages from "../../assets/CustomizablePackages.png";
 import MiniBus from "../../assets/MiniBus.png";
