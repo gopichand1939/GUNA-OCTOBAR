@@ -2,23 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // ✅ Updated imports (no spaces)
-import SchoolBus from "../../assets/SchoolBus.png";
-import ProfessionalExcl from "../../assets/ProfessionalExcl.png";
-import Founder from "../../assets/Founder.png";
+import SchoolBus from "../../assets/assets/st.anns.jpg";
+import ProfessionalExcl from "../../assets/assets/Infinite.jpg";
+import Founder from "../../assets/assets/infosys.jpg";
 import CustomPackages from "../../assets/CustomizablePackages.png";
 import MiniBus from "../../assets/MiniBus.png";
 import LuxuryCoach from "../../assets/LuxuryCoach.png";
 import TempoTraveller from "../../assets/TempoTraveller.png";
+import Mahathi from "../../assets/assets/mahathi.jpg"
 
 const partners = [
-  { id: 1, name: "ABC School", icon: SchoolBus },
-  { id: 2, name: "XYZ Corporation", icon: ProfessionalExcl },
-  { id: 3, name: "Tech Industries", icon: Founder },
-  { id: 4, name: "Global Events", icon: CustomPackages },
+  { id: 1, name: "St. Mary's School", icon: SchoolBus },
+  { id: 2, name: "Infinte Computer Solutions", icon: ProfessionalExcl },
+  { id: 3, name: "Infosys", icon: Founder },
+  { id: 4, name: "Family Events", icon: CustomPackages },
   { id: 5, name: "City Transport", icon: MiniBus },
   { id: 6, name: "Premium Services", icon: LuxuryCoach },
   { id: 7, name: "Elite Travels", icon: TempoTraveller },
-  { id: 8, name: "Corporate Partners", icon: ProfessionalExcl },
+  { id: 8, name: "Mahathi Solutions", icon: Mahathi },
 ];
 
 const TrustedBy = () => {

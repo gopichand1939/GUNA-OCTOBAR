@@ -6,7 +6,6 @@ import About from "../pages/About/About";
 import Services from "../pages/Services/Services";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../components/ErrorPage";
-import Gallery from "../pages/Gallery/Gallery";
 
 const AppRouter = () => {
   return (
@@ -32,10 +31,6 @@ const AppRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<ErrorPage />} />
-   <Route path="/gallery" element={<Gallery />} />
-
-   
-   
       </Routes>
     </BrowserRouter>
   );

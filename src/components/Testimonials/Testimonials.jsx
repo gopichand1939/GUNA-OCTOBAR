@@ -9,9 +9,9 @@ const testimonials = [
   {
     id: 1,
     avatar: FounderAvatar,
-    name: "Priya Sharma",
+    name: "Rinijessie Vedala",
     role: "HR Manager",
-    company: "Tech Solutions Inc.",
+    company: "Infinite Computer Solutions",
     quote:
       "Professional service with attention to detail. Drivers were punctual and courteous. A fantastic experience overall!",
     rating: 5,

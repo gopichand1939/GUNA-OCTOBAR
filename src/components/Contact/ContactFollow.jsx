@@ -7,7 +7,7 @@ export default function ContactFollow() {
     { icon: FaFacebook, name: "Facebook", link: "https://facebook.com/yourpage" },
     { icon: FaTwitter, name: "Twitter", link: "https://twitter.com/yourprofile" },
     { icon: FaLinkedin, name: "LinkedIn", link: "https://linkedin.com/company/yourcompany" },
-    { icon: FaInstagram, name: "Instagram", link: "https://instagram.com/yourprofile" },
+    { icon: FaInstagram, name: "Instagram", link: "https://www.instagram.com/jaitra141118?igsh=MTZhY2xwdG10eGJ3Ng==" },
   ];
 
   return (
