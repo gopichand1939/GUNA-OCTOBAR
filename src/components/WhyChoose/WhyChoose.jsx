@@ -55,7 +55,7 @@ const WhyChoose = () => {
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={() => setCursor({ x: -9999, y: -9999 })}
-      className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-slate-50"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-white to-slate-50"
     >
       <motion.div
         animate={{ left: cursor.x - 120, top: cursor.y - 120, opacity: cursor.x === -9999 ? 0 : 0.55 }}
@@ -64,20 +64,20 @@ const WhyChoose = () => {
         style={{ left: -9999, top: -9999 }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10 text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center mb-10 sm:mb-12 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 sm:mb-6">
           Why Choose{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-600">
             Jaitra Enterprises?
           </span>
         </h2>
-        <p className="text-slate-600 max-w-2xl mx-auto">
+        <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto px-2">
           The perfect balance of safety, comfort, professionalism, and trust.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {reasons.map((item) => (
             <motion.div
               key={item.id}

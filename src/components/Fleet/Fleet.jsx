@@ -64,17 +64,17 @@ const Fleet = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white py-20 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Our Fleet</h1>
-          <p className="text-blue-100 text-lg">
+      <section className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white py-16 sm:py-20 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4">Our Fleet</h1>
+          <p className="text-blue-100 text-sm sm:text-base md:text-lg px-2">
             Well-maintained vehicles to suit every need — modern, safe and reliable.
           </p>
         </div>
       </section>
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {fleet.map((v) => (
               <FleetCard key={v.id} {...v} />
             ))}

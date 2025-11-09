@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}", "./public/index.html"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+      },
       keyframes: {
         'light-ray': {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.2' },

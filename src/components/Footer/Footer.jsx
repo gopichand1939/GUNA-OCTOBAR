@@ -18,23 +18,23 @@ const Footer = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-6"
       >
-        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
           Jaitra Enterprises
         </h2>
 
-        <p className="text-gray-400 text-sm md:text-base max-w-lg leading-relaxed">
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-lg leading-relaxed px-2">
           Reliable travel solutions for schools, corporates, and events — bringing comfort, safety, and professionalism to every ride.
         </p>
 
         <motion.div
-          className="flex justify-center items-center gap-3 text-orange-400 mt-4"
+          className="flex justify-center items-center gap-2 sm:gap-3 text-orange-400 mt-3 sm:mt-4"
           whileHover={{ scale: 1.05 }}
         >
-          <FaPhoneAlt className="text-lg" />
-          <span className="text-base md:text-lg font-medium">+91 98765 43210</span>
+          <FaPhoneAlt className="text-base sm:text-lg" />
+          <span className="text-sm sm:text-base md:text-lg font-medium">+91 98765 43210</span>
         </motion.div>
 
-        <div className="flex justify-center gap-5 mt-6">
+        <div className="flex justify-center gap-4 sm:gap-5 mt-4 sm:mt-6">
           {socials.map(({ icon: Icon, link, name }, i) => (
             <motion.a
               key={i}
@@ -43,9 +43,10 @@ const Footer = () => {
               rel="noopener noreferrer"
               title={name}
               whileHover={{ scale: 1.2, y: -3 }}
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 text-orange-400 hover:bg-orange-500 hover:text-white shadow-lg shadow-orange-500/20 transition-all duration-300"
+              whileTap={{ scale: 0.9 }}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white/10 text-orange-400 hover:bg-orange-500 hover:text-white shadow-lg shadow-orange-500/20 transition-all duration-300 touch-manipulation"
             >
-              <Icon />
+              <Icon className="text-sm sm:text-base" />
             </motion.a>
           ))}
         </div>

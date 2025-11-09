@@ -7,6 +7,7 @@ import Logo from "../../assets/Logo.png";
 const links = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
 ];
@@ -21,31 +22,32 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-20 flex items-center justify-between">
-          <NavLink to="/" className="flex items-center gap-3">
-            <div className="flex items-center justify-center overflow-hidden">
-              <img
-                src={Logo}
-                alt="Jaitra Enterprises Logo"
-                className="w-60 h-52 object-contain"
-              />
-            </div>
+          <NavLink to="/" className="flex items-center">
+            <motion.img
+              src={Logo}
+              alt="Jaitra Enterprises Logo"
+              className="w-56 h-40 object-contain"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            />
           </NavLink>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-10">
+            <ul className="flex items-center gap-8 text-base font-medium">
               {links.map((l) => (
                 <li key={l.to}>
                   <NavLink
                     to={l.to}
                     end={l.end}
                     className={({ isActive }) =>
-                      `relative text-gray-700 hover:text-blue-700 transition font-medium ${
+                      `relative py-2 transition ${
                         isActive
-                          ? "text-blue-700 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-700 after:rounded-full"
-                          : ""
+                          ? "text-blue-700 font-semibold"
+                          : "text-gray-700 hover:text-blue-600"
                       }`
                     }
                   >
@@ -54,12 +56,15 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a
+
+            <motion.a
               href="/contact"
-              className="ml-4 bg-gradient-to-r from-blue-700 to-blue-600 hover:to-blue-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow-md transition"
             >
               Book Now
-            </a>
+            </motion.a>
           </nav>
 
           <button
@@ -67,7 +72,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition"
           >
-            {open ? <FaTimes size={22} /> : <FaBars size={22} />}
+            {open ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
@@ -75,21 +80,21 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-white border-t shadow-lg"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/95 backdrop-blur-lg border-t shadow-lg"
           >
-            <ul className="flex flex-col items-center py-5 space-y-4 text-gray-800 font-medium">
+            <ul className="flex flex-col items-center py-6 space-y-5 text-lg font-medium">
               {links.map((l) => (
                 <li key={l.to}>
                   <NavLink
                     to={l.to}
                     end={l.end}
                     className={({ isActive }) =>
-                      `block px-3 py-2 rounded-md ${
-                        isActive ? "text-blue-700 font-semibold" : "hover:text-blue-700"
+                      `block px-4 py-2 rounded-md ${
+                        isActive ? "text-blue-700 font-semibold" : "text-gray-700 hover:text-blue-600"
                       }`
                     }
                   >
@@ -97,14 +102,14 @@ export default function Navbar() {
                   </NavLink>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/contact"
-                  className="inline-block bg-gradient-to-r from-blue-700 to-blue-600 hover:to-blue-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition"
-                >
-                  Book Now
-                </a>
-              </li>
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.07 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full shadow-md"
+              >
+                Book Now
+              </motion.a>
             </ul>
           </motion.div>
         )}

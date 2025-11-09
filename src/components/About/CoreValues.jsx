@@ -34,22 +34,22 @@ const values = [
 
 export default function CoreValues() {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-blue-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 bg-gradient-to-b from-blue-50 via-white to-blue-50 overflow-hidden">
       <div className="absolute top-0 left-0 w-[550px] h-[550px] bg-gradient-to-br from-blue-300/30 to-orange-200/30 blur-3xl rounded-full animate-pulse-slow" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tr from-orange-200/30 to-blue-300/30 blur-3xl rounded-full animate-pulse-slow delay-500" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-orange-600 to-blue-900 drop-shadow-sm">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-orange-600 to-blue-900 drop-shadow-sm">
             Our Core Values
           </h2>
-          <p className="text-slate-600 mt-6 max-w-2xl mx-auto text-lg md:text-xl">
+          <p className="text-slate-600 mt-4 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl px-2">
             The principles that drive our promise of safety, reliability, and excellence.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ export default function CoreValues() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.15 } },
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10"
         >
           {values.map((v) => (
             <motion.div

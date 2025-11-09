@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Mission() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-white to-orange-200"></div>
 
       <motion.div
@@ -20,25 +20,25 @@ export default function Mission() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative max-w-6xl mx-auto px-6 text-center"
+        className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center"
       >
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-900 mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-8 sm:mb-10 md:mb-12"
         >
           Our Mission
         </motion.h2>
 
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-8 sm:p-12 md:p-16 max-w-4xl mx-auto border border-white/40">
+        <div className="bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 lg:p-16 max-w-4xl mx-auto border border-white/40">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-slate-700 text-lg sm:text-xl leading-relaxed"
+            className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed"
           >
             At <span className="text-blue-800 font-semibold">Jaitra Enterprises</span>, we focus on elevating travel through
             <span className="text-orange-600 font-semibold"> safety</span>,
@@ -52,7 +52,7 @@ export default function Mission() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.35 }}
             viewport={{ once: true }}
-            className="text-slate-700 text-lg sm:text-xl leading-relaxed mt-6"
+            className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-4 sm:mt-6"
           >
             Our mission is to ensure every journey feels smooth, reliable, and meaningful. Whether it’s daily travel or
             special occasions, we deliver excellence with care in every mile.
