@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
@@ -9,9 +10,18 @@ import corporateImages from "./CorporateGallery.jsx";
 import schoolImages from "./SchoolGallery.jsx";
 import familyImages from "./FamilyEvents.jsx";
 import customImages from "./CustomizedPackages.jsx";
+import devotionalImages from "./DevotionalGallery.jsx";
 
 export default function Gallery() {
-  const [filter, setFilter] = useState("all");
+  const [searchParams] = useSearchParams();
+  const filterParam = searchParams.get("filter") || "all";
+  const [filter, setFilter] = useState(filterParam);
+
+  useEffect(() => {
+    if (filterParam) {
+      setFilter(filterParam);
+    }
+  }, [filterParam]);
 
   const getImages = () => {
     switch (filter) {
@@ -23,6 +33,8 @@ export default function Gallery() {
         return familyImages;
       case "custom":
         return customImages;
+      case "devotional":
+        return devotionalImages;
       default:
         return allImages;
     }
@@ -48,7 +60,8 @@ export default function Gallery() {
               { key: "corporate", label: "Corporate School" },
               { key: "school", label: "School Gallery" },
               { key: "family", label: "Family Events" },
-              { key: "custom", label: "Customized Packages" }
+              { key: "custom", label: "Customized Packages" },
+              { key: "devotional", label: "Devotional Gallery" }
             ].map((btn) => (
               <button
                 key={btn.key}

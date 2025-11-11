@@ -1,8 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import schoolImg from "../../assets/SchoolBus.png";
 
 export default function ServiceSchool() {
+  const navigate = useNavigate();
+
+  const handleViewGallery = () => {
+    navigate("/gallery?filter=school");
+  };
+
   return (
     <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 bg-gradient-to-b from-blue-50 via-white to-blue-50 overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-orange-300/30 to-blue-300/30 blur-3xl rounded-full animate-pulse-slow" />
@@ -45,6 +52,14 @@ export default function ServiceSchool() {
               <span className="text-orange-600 text-lg sm:text-xl">✔</span> Background-Verified Drivers
             </li>
           </ul>
+          <motion.button
+            onClick={handleViewGallery}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-6 sm:mt-8 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-700 to-orange-600 hover:from-blue-800 hover:to-orange-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            View School Gallery →
+          </motion.button>
         </motion.div>
 
         <motion.div

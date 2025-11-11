@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const FleetCard = ({ image, title, subtitle, capacity, features = [] }) => {
+const FleetCard = ({ image, title, subtitle, capacity, features = [], count }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
@@ -31,10 +31,22 @@ const FleetCard = ({ image, title, subtitle, capacity, features = [] }) => {
           </svg>
           <span>{capacity}</span>
         </div>
+        {count && (
+          <div className="flex items-center gap-2 text-sm text-blue-300 mt-2 font-semibold">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+            </svg>
+            <span>{count}</span>
+          </div>
+        )}
       </div>
       <div className="p-6 bg-white text-center group-hover:opacity-0 transition-opacity duration-300">
         <h4 className="text-lg font-semibold text-slate-800">{title}</h4>
         <p className="text-sm text-slate-500">{subtitle}</p>
+        {count && (
+          <p className="text-xs text-blue-600 font-semibold mt-2">{count}</p>
+        )}
       </div>
     </motion.div>
   );

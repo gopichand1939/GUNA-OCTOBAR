@@ -15,12 +15,24 @@ const Services = () => {
     <>
       <Navbar />
       <ServiceHero />
-      <ServiceCorporate />
-      <ServiceSchool />
-      <ServiceFamily />
-      <ServiceTour />
-      <ServiceTransport />
-      <ServiceDevotional />
+      <div id="corporate" style={{ scrollMarginTop: '100px' }}>
+        <ServiceCorporate />
+      </div>
+      <div id="school" style={{ scrollMarginTop: '100px' }}>
+        <ServiceSchool />
+      </div>
+      <div id="family" style={{ scrollMarginTop: '100px' }}>
+        <ServiceFamily />
+      </div>
+      <div id="tour" style={{ scrollMarginTop: '100px' }}>
+        <ServiceTour />
+      </div>
+      <div id="transport" style={{ scrollMarginTop: '100px' }}>
+        <ServiceTransport />
+      </div>
+      <div id="devotional" style={{ scrollMarginTop: '100px' }}>
+        <ServiceDevotional />
+      </div>
       <Footer />
     </>
   );

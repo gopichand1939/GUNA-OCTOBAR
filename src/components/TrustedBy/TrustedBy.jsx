@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 import SchoolBus from "../../assets/assets/st.anns.jpg";
 import ProfessionalExcl from "../../assets/assets/Infinite.jpg";
 import Founder from "../../assets/assets/infosys.jpg";
-import CustomPackages from "../../assets/CustomizablePackages.png";
-import MiniBus from "../../assets/MiniBus.png";
-import LuxuryCoach from "../../assets/LuxuryCoach.png";
-import TempoTraveller from "../../assets/TempoTraveller.png";
-import Mahathi from "../../assets/assets/mahathi.jpg"
+import Mahathi from "../../assets/assets/mahathi.jpg";
+import FedServ from "../../assets/assets/fedserv.png";
+import Comtron from "../../assets/assets/comtron.jpg";
+import Clove from "../../assets/assets/clove.jpg";
+import SriViswa from "../../assets/assets/sri-viswa-logo.webp";
 
 const partners = [
   { id: 1, name: "St. Mary's School", icon: SchoolBus },
   { id: 2, name: "Infinte Computer Solutions", icon: ProfessionalExcl },
   { id: 3, name: "Infosys", icon: Founder },
-  { id: 4, name: "Family Events", icon: CustomPackages },
-  { id: 5, name: "City Transport", icon: MiniBus },
-  { id: 6, name: "Premium Services", icon: LuxuryCoach },
-  { id: 7, name: "Elite Travels", icon: TempoTraveller },
-  { id: 8, name: "Mahathi Solutions", icon: Mahathi },
+  { id: 4, name: "Comtron", icon: Comtron },
+  { id: 5, name: "Clove", icon: Clove },
+  { id: 6, name: "SRI VISWA INSTITUTIONS", icon: SriViswa },
+  { id: 7, name: "Mahathi Solutions", icon: Mahathi },
+  { id: 8, name: "FedServ", icon: FedServ },
 ];
 
 const TrustedBy = () => {
