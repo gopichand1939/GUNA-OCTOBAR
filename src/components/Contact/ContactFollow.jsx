@@ -11,7 +11,7 @@ export default function ContactFollow() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-blue-50 text-center">
+    <section className="py-12 sm:py-16 md:py-20 bg-blue-50 text-center relative">
       <h2 className="text-2xl sm:text-3xl font-extrabold text-blue-900 mb-4 sm:mb-6">Follow Us</h2>
       <div className="flex justify-center gap-4 sm:gap-6">
         {socials.map(({ icon: Icon, link, name }, i) => (

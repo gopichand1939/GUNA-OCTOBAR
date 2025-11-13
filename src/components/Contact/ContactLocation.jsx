@@ -14,7 +14,7 @@ export default function ContactLocation() {
   const [error, setError] = useState(false);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-blue-50 to-white text-center">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-blue-50 via-white to-[#0a0f1a] text-center">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
