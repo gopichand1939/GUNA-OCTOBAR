@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "../../assets/jaitrUpdatedLogo.jpeg";
+import Logo from "../../assets/jaitrUpdatedLogo3.jpeg";
 
 const links = [
   { to: "/", label: "Home", end: true },
@@ -24,15 +24,12 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="h-20 flex items-center justify-between">
-          <NavLink to="/" className="flex items-center">
-            <motion.img
+        <div className="h-24 sm:h-28 flex items-center justify-between">
+          <NavLink to="/" className="flex items-center h-full">
+            <img
               src={Logo}
               alt="Jaitra Enterprises Logo"
-              className="w-20 h-20 rounded-full object-contain border-2 border-blue-200 shadow-md p-1 bg-white"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              className="h-24 sm:h-28 w-48 sm:w-64 object-contain rounded-lg"
             />
           </NavLink>
 

@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix for mobile scrolling - set background on html and body */
+html {
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #6EE7B7, #3B82F6, #9333EA, #A855F7);
+  background-size: 400% 400%;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   color: #ffffff;
@@ -10,8 +20,18 @@ body {
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
   margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* Use fixed attachment only on desktop for better mobile performance */
+@media (min-width: 769px) {
+  html, body {
+    background-attachment: fixed;
+  }
 }
 
 @keyframes gradientFlow {
@@ -45,9 +65,36 @@ code {
   animation: gradient-x 6s ease infinite;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
+/* Smooth scrolling for better mobile experience */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Reduce heavy shadows on mobile */
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  }
+  
+  /* Optimize animations for mobile */
+  [class*="motion"] {
+    will-change: transform, opacity;
+  }
+  
+  /* Disable heavy backdrop blur on mobile for better performance */
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
 @keyframes flow {

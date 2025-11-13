@@ -21,9 +21,9 @@ export default function ServiceHero() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Get navbar height dynamically or use fixed value (h-20 = 80px)
+      // Get navbar height dynamically or use fixed fallback value
       const navbar = document.querySelector('header');
-      const navbarHeight = navbar ? navbar.offsetHeight : 80;
+      const navbarHeight = navbar ? navbar.offsetHeight : 96;
       const padding = 20; // Extra padding for better visibility
       const offset = navbarHeight + padding;
       
